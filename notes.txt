@@ -1,0 +1,10 @@
+
+Things that I need to do
+
+[ ] Move the jwt template into create react app
+
+-start with the dependencies
+redux, react-redux, react-router, redux-logger and redux-thunk
+
+-imports and exports, get it done
+
