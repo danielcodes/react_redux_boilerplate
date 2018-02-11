@@ -2,9 +2,17 @@
 Things that I need to do
 
 [ ] Move the jwt template into create react app
+[ ] Create consistency in the imports
 
 -start with the dependencies
-redux, react-redux, react-router, redux-logger and redux-thunk
+redux, react-redux, react-router-dom, redux-logger, redux-thunk, history
 
 -imports and exports, get it done
 
+I'm starting to see how keeping the index.js file in the dir makes imports easier
+doing an export default will return that one thing
+when it is imported, it can be named to anything, hmm.. this leaves room for error, should be stricter
+so doing the index.js to export things and using export { this as that } on import must do { item } from <directory>, pretty cool
+
+Things to look into
+-Kubernetes
