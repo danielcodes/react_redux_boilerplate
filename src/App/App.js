@@ -3,6 +3,7 @@ import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
@@ -28,16 +29,16 @@ class App extends Component {
 		const { alert } = this.props;
 		return (
 			<div>
-			{alert.message && <div className={`alert ${alert.type}`}>{alert.message}</div>}
+				{alert.message && <div className={`alert ${alert.type}`}>{alert.message}</div>}
 
-			<Router history={history}>
-				<div>
-					<PrivateRoute exact path="/" component={HomePage} />
-					<Route path="/home" component={LandingPage} />
-					<Route path="/login" component={LoginPage} />
-					<Route path="/signup" component={SignUpPage} />
-				</div>
-			</Router>
+				<Router history={history}>
+					<div>
+						<PrivateRoute exact path="/" component={HomePage} />
+						<Route path="/home" component={LandingPage} />
+						<Route path="/login" component={LoginPage} />
+						<Route path="/signup" component={SignUpPage} />
+					</div>
+				</Router>
 			</div>
 		);
 	}

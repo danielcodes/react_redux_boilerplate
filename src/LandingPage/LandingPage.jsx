@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { BasePage } from '../BasePage';
-import { userActions } from '../_actions';
+
 
 class LandingPage extends React.Component {
 	render() {
@@ -17,4 +17,4 @@ class LandingPage extends React.Component {
 	}
 }
 
-export { LandingPage as LandingPage };
+export { LandingPage };

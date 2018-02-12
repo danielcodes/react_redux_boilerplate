@@ -1,8 +1,14 @@
 
 Things that I need to do
 
-[ ] Move the jwt template into create react app
-[ ] Create consistency in the imports
+[x] Move the jwt template into create react app
+[x] Create consistency in the imports
+[ ] start working towards a landing page, sign up, log in, and a private view
+
+import all the todos from previous notes.txt
+
+why does children have to be wrapped in an object to be passed to a component?
+({children}) => component()
 
 -start with the dependencies
 redux, react-redux, react-router-dom, redux-logger, redux-thunk, history
