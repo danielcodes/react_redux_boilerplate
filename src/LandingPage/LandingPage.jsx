@@ -10,7 +10,7 @@ class LandingPage extends React.Component {
 		return (
 			<BasePage>
 				<div>
-					<h2>Hi this is the landing page for Pollster</h2>
+					<h2>Hi this is the landing page</h2>
 				</div>
 			</BasePage>
 		);

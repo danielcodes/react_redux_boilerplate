@@ -55,15 +55,25 @@ class LoginPage extends React.Component {
 							</Header>
 							<Form size='large' onSubmit={this.handleSubmit}>
 								<Segment stacked>
-									<Form.Input fluid name='username' icon='user' iconPosition='left' placeholder='Username' onChange={this.handleChange} />
-
-									<Form.Input fluid name='password' icon='lock' iconPosition='left' placeholder='Password' type='password' onChange={this.handleChange}/>
+									<Form.Input fluid 
+										name='username' 
+										icon='user' 
+										iconPosition='left' 
+										placeholder='Username' 
+										onChange={this.handleChange} 
+									/>
+									<Form.Input fluid 
+										name='password' 
+										icon='lock' 
+										iconPosition='left' 
+										placeholder='Password' 
+										type='password' 
+										onChange={this.handleChange}
+									/>
 									<Button tye='submit' color='teal' fluid size='large'>Login</Button>
 								</Segment>
 							</Form>
-							<Message>
-								New user? <Link to='/signup'>Sign Up</Link>
-							</Message>
+							<Message>New user? <Link to='/signup'>Sign Up</Link></Message>
 						</Grid.Column>
 					</Grid>
 				</div>
