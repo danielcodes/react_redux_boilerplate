@@ -74,34 +74,32 @@ class DesktopContainer extends Component {
 
     return (
       <Responsive {...Responsive.onlyComputer}>
-        <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment inverted textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
-            <Menu
-              fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size='large'
-            >
-              <Container>
-                <Menu.Item as={Link} to="/" active>Home</Menu.Item>
-                <Menu.Item as='a'>About</Menu.Item>
-                <Menu.Item position='right'>
-									{localStorage.getItem('user') ? (
-										<Button as={Link} inverted={!fixed} to="/login">Log Out</Button>
-										) : (
-										<div>
-											<Button as={Link} inverted={!fixed} to="/login">Log In</Button>
-											<Button as={Link} inverted={!fixed} to="/signup" primary={fixed} style={{ marginLeft: '0.5em' }}>Sign Up</Button>
-										</div>
-										)
-									}
-                </Menu.Item>
-              </Container>
-            </Menu>
-						{children}
-          </Segment>
-        </Visibility>
+				<Segment inverted textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
+					<Menu
+						fixed={fixed ? 'top' : null}
+						inverted={!fixed}
+						pointing={!fixed}
+						secondary={!fixed}
+						size='large'
+					>
+						<Container>
+							<Menu.Item as={Link} to="/" active>Home</Menu.Item>
+							<Menu.Item as='a'>About</Menu.Item>
+							<Menu.Item position='right'>
+								{localStorage.getItem('user') ? (
+									<Button as={Link} inverted={!fixed} to="/login">Log Out</Button>
+									) : (
+									<div>
+										<Button as={Link} inverted={!fixed} to="/login">Log In</Button>
+										<Button as={Link} inverted={!fixed} to="/signup" primary={fixed} style={{ marginLeft: '0.5em' }}>Sign Up</Button>
+									</div>
+									)
+								}
+							</Menu.Item>
+						</Container>
+					</Menu>
+					{children}
+				</Segment>
       </Responsive>
     )
   }

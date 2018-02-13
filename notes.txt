@@ -5,6 +5,9 @@ Things that I need to do
 [x] Create consistency in the imports
 [ ] start working towards a landing page, sign up, log in, and a private view
 
+Problems
+-when dev tools is opened, site disappears, wut
+
 import all the todos from previous notes.txt
 
 why does children have to be wrapped in an object to be passed to a component?
