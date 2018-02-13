@@ -6,6 +6,7 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 
 import { BasePage } from '../BasePage';
 import { userActions } from '../_actions';
+import { alertActions } from '../_actions';
 
 class SignUpPage extends React.Component {
 	constructor(props) {
@@ -39,10 +40,13 @@ class SignUpPage extends React.Component {
 		if (username && email && password) {
 			dispatch(userActions.signUp(username, email, password));
 		}
+		else {
+			dispatch(alertActions.error('Missing fields in Sign Up Form'));
+		}
 	}
 
 	render() {
-		const { loggingIn } = this.props;
+		const { signingIn } = this.props;
 		const { username, email, password, submitted } = this.state;
 		return (
 			<BasePage>
@@ -59,6 +63,7 @@ class SignUpPage extends React.Component {
 										icon='user' 
 										iconPosition='left' 
 										placeholder='Username' 
+										error={submitted && !username}
 										onChange={this.handleChange} 
 									/>
 									<Form.Input fluid 
@@ -67,6 +72,7 @@ class SignUpPage extends React.Component {
 										iconPosition='left' 
 										placeholder='Email' 
 										type='email'
+										error={submitted && !email}
 										onChange={this.handleChange} 
 									/>
 									<Form.Input fluid 
@@ -75,9 +81,17 @@ class SignUpPage extends React.Component {
 										iconPosition='left' 
 										placeholder='Password' 
 										type='password' 
+										error={submitted && !password}
 										onChange={this.handleChange}
 									/>
-									<Button tye='submit' color='teal' fluid size='large'>Sign Up</Button>
+									<Button 
+										fluid 
+										type='submit' 
+										color='teal' 
+										size='large'
+										content='Sign Up'
+										loading={signingIn}
+									/>
 								</Segment>
 							</Form>
 						</Grid.Column>
@@ -89,7 +103,10 @@ class SignUpPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return {};
+	const { signingIn } = state.signup;
+	return {
+		signingIn	
+	};
 }
 
 const connectedSignUpPage = connect(mapStateToProps)(SignUpPage);

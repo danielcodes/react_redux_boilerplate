@@ -60,6 +60,7 @@ class LoginPage extends React.Component {
 										icon='user' 
 										iconPosition='left' 
 										placeholder='Username' 
+										error={submitted && !username}
 										onChange={this.handleChange} 
 									/>
 									<Form.Input fluid 
@@ -68,9 +69,17 @@ class LoginPage extends React.Component {
 										iconPosition='left' 
 										placeholder='Password' 
 										type='password' 
+										error={submitted && !password}
 										onChange={this.handleChange}
 									/>
-									<Button tye='submit' color='teal' fluid size='large'>Login</Button>
+									<Button 
+										fluid 
+										type='submit' 
+										color='teal' 
+										size='large'
+										content='Login'
+										loading={loggingIn}
+									/>
 								</Segment>
 							</Form>
 							<Message>New user? <Link to='/signup'>Sign Up</Link></Message>
@@ -83,10 +92,10 @@ class LoginPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    const { loggingIn } = state.authentication;
-    return {
-        loggingIn
-    };
+	const { loggingIn } = state.authentication;
+	return {
+		loggingIn
+	};
 }
 
 const connectedLoginPage = connect(mapStateToProps)(LoginPage);

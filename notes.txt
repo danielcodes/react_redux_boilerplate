@@ -10,14 +10,16 @@ Things that I need to do
 DO THIS
 END GOAL -> landing page, sign up, log in, and a private view
 [x] when dev tools is opened, site disappears, wut => had to do with the Responsive component
-[ ] mave alerts to under the nave bar and style it
-[ ] add in some validation when the forms are submitted
+[x] mave alerts to under the nave bar and style it
+[x] add in some validation when the forms are submitted => highlight uncompleted fields
 [ ] add value attributes to the form inputs
 
 [ ] Add a 404 page for routes that don't exists
 [ ] Fix exports, too verbose...
 
 Problems
+Pass the alert down as a prop
+Why is alert clear called so many darn times?? Probably has to do with moving the alerts into Base and it's messng with the router??
 Once you apply 'connect' to a component, it gets the dispatch func?
 
 why does children have to be wrapped in an object to be passed to a component?
@@ -33,11 +35,11 @@ so doing the index.js to export things and using export { this as that } on impo
 think I just found out about object destructuring with { field1, field2, .. } = object
 
 
-Things to look into
--Kubernetes
-
-
-Things that I learn as I implement these things
+Observations:
+-form wants all fields before it hits the backend
+--how would things change on forms with fields are are not required, hmm...
+-added actions for sign up, wanted a spinner on the submit button in the signup form
+-looking at control flow is fascinating, first dispatching a request -> success / failure and then dispatching more actions
 
 Things to keep in mind
 -Good commit history
