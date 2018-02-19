@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { BasePage } from '../BasePage';
-
 import { userActions } from '../_actions';
+
 
 class HomePage extends React.Component {
 	componentDidMount() {
@@ -18,7 +17,7 @@ class HomePage extends React.Component {
 	render() {
 		const { user, users } = this.props;
 		return (
-			<BasePage>
+			<div>
 				<h1>Hi {user.username}!</h1>
 
 				<h3>Users from secure api end point:</h3>
@@ -31,7 +30,7 @@ class HomePage extends React.Component {
 						)}
 					</ul>
 				}
-			</BasePage>
+			</div>
 		);
 	}
 }
