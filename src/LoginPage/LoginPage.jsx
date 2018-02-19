@@ -58,6 +58,7 @@ class LoginPage extends React.Component {
 									icon='user' 
 									iconPosition='left' 
 									placeholder='Username' 
+									value={username}
 									error={submitted && !username}
 									onChange={this.handleChange} 
 								/>
@@ -67,6 +68,7 @@ class LoginPage extends React.Component {
 									iconPosition='left' 
 									placeholder='Password' 
 									type='password' 
+									value={password}
 									error={submitted && !password}
 									onChange={this.handleChange}
 								/>

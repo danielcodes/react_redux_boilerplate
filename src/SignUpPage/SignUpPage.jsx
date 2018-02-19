@@ -64,6 +64,7 @@ class SignUpPage extends React.Component {
 									icon='user' 
 									iconPosition='left' 
 									placeholder='Username' 
+									value={username}
 									error={submitted && !username}
 									onChange={this.handleChange} 
 								/>
@@ -73,6 +74,7 @@ class SignUpPage extends React.Component {
 									iconPosition='left' 
 									placeholder='Email' 
 									type='email'
+									value={email}
 									error={submitted && !email}
 									onChange={this.handleChange} 
 								/>
@@ -82,6 +84,7 @@ class SignUpPage extends React.Component {
 									iconPosition='left' 
 									placeholder='Password' 
 									type='password' 
+									value={password}
 									error={submitted && !password}
 									onChange={this.handleChange}
 								/>

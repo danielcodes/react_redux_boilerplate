@@ -14,8 +14,8 @@ END GOAL -> landing page, sign up, log in, and a private view
 [x] add in some validation when the forms are submitted => highlight uncompleted fields
 [x] fix up react router configuration, alert action is going crazy
 --alert still called twice on some pages
+[x] add value attributes to the form inputs
 
-[ ] add value attributes to the form inputs
 [ ] Add a 404 page for routes that don't exists
 
 ============================================================================================
