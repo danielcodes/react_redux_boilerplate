@@ -13,22 +13,14 @@ import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { LandingPage } from '../LandingPage';
 import { SignUpPage } from '../SignUpPage';
+import { AboutPage } from '../AboutPage';
 
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
   Menu,
 	Message,
-  Responsive,
   Segment,
-  Sidebar,
-  Visibility,
 } from 'semantic-ui-react'
 
 
@@ -44,13 +36,12 @@ class App extends Component {
 	}
 
 	render(){
-    const { children, alert } = this.props
+    const { alert } = this.props
     const { fixed } = false
 
 	  return (
 			<Router history={history}>
 				<Segment inverted textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
-
 					<Menu
 						fixed={fixed}
 						inverted={!fixed}
@@ -60,7 +51,7 @@ class App extends Component {
 					>
 						<Container>
 							<Menu.Item as={Link} to="/" active>Home</Menu.Item>
-							<Menu.Item as='a'>About</Menu.Item>
+							<Menu.Item as={Link} to="/about" >About</Menu.Item>
 							<Menu.Item position='right'>
 								{localStorage.getItem('user') ? (
 									<Button as={Link} inverted={!fixed} to="/login">Log Out</Button>
@@ -79,6 +70,7 @@ class App extends Component {
 
 					<PrivateRoute exact path="/" component={HomePage} />
 					<Route path="/home" component={LandingPage} />
+					<Route path="/about" component={AboutPage} />
 					<Route path="/login" component={LoginPage} />
 					<Route path="/signup" component={SignUpPage} />
 				</Segment>
