@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import 'semantic-ui-css/semantic.min.css';
@@ -14,6 +14,7 @@ import { LoginPage } from '../LoginPage';
 import { LandingPage } from '../LandingPage';
 import { SignUpPage } from '../SignUpPage';
 import { AboutPage } from '../AboutPage';
+import { NotFoundPage } from '../NotFoundPage';
 
 import {
   Button,
@@ -68,11 +69,14 @@ class App extends Component {
 
 					{alert.message && <Message compact color={alert.type} content={alert.message}/>}
 
-					<PrivateRoute exact path="/" component={HomePage} />
-					<Route path="/home" component={LandingPage} />
-					<Route path="/about" component={AboutPage} />
-					<Route path="/login" component={LoginPage} />
-					<Route path="/signup" component={SignUpPage} />
+					<Switch>
+						<PrivateRoute exact path="/" component={HomePage} />
+						<Route path="/home" component={LandingPage} />
+						<Route path="/about" component={AboutPage} />
+						<Route path="/login" component={LoginPage} />
+						<Route path="/signup" component={SignUpPage} />
+						<Route component={NotFoundPage} />
+					</Switch>
 				</Segment>
 			</Router>
 		)	
